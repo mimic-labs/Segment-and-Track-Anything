@@ -13,8 +13,9 @@ from torchvision.ops import box_convert
 
 class Detector:
     def __init__(self, device):
-        config_file = "src/groundingdino/groundingdino/config/GroundingDINO_SwinT_OGC.py"
-        grounding_dino_ckpt = './ckpt/groundingdino_swint_ogc.pth'
+        base = "/nethome/abati7/flash/Work/mimicopy/mimic/third_party/Segment-and-Track-Anything/"
+        config_file = base + "src/groundingdino/groundingdino/config/GroundingDINO_SwinT_OGC.py"
+        grounding_dino_ckpt = base+'ckpt/groundingdino_swint_ogc.pth'
         args = SLConfig.fromfile(config_file) 
         args.device = device
         self.deivce = device

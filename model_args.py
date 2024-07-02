@@ -1,7 +1,8 @@
 # Explanation of generator_args is in sam/segment_anything/automatic_mask_generator.py: SamAutomaticMaskGenerator
+base = "/nethome/abati7/flash/Work/mimicopy/mimic/third_party/Segment-and-Track-Anything/"
 sam_args = {
-    'sam_checkpoint': "ckpt/sam_vit_b_01ec64.pth",
-    'model_type': "vit_b",
+    'sam_checkpoint': base+"ckpt/sam_vit_l_0b3195.pth",
+    'model_type': "vit_l",
     'generator_args':{
         'points_per_side': 16,
         'pred_iou_thresh': 0.8,
@@ -14,8 +15,8 @@ sam_args = {
 }
 aot_args = {
     'phase': 'PRE_YTB_DAV',
-    'model': 'r50_deaotl',
-    'model_path': 'ckpt/R50_DeAOTL_PRE_YTB_DAV.pth',
+    'model': 'swinb_deaotl',#'r50_deaotl'
+    'model_path': base+'ckpt/SwinB_DeAOTL_PRE_YTB_DAV.pth',
     'long_term_mem_gap': 9999,
     'max_len_long_term': 9999,
     'gpu_id': 0,

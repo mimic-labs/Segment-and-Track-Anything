@@ -213,7 +213,8 @@ class SegTracker():
 
         refined_merged_mask = self.origin_merged_mask.copy()
         refined_merged_mask[interactive_mask > 0] = self.curr_idx
-
+        self.origin_merged_mask = refined_merged_mask
+        self.curr_idx += 1
         return refined_merged_mask
     
     def detect_and_seg(self, origin_frame: np.ndarray, grounding_caption, box_threshold, text_threshold, box_size_threshold=1, reset_image=False):
